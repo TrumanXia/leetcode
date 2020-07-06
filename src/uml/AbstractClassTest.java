@@ -1,4 +1,5 @@
 package uml;
 
-public class AbstractClassTest {
+public abstract class AbstractClassTest {
+    abstract void go();
 }

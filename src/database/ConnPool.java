@@ -4,8 +4,6 @@ import javax.sql.DataSource;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -62,17 +60,14 @@ public class ConnPool implements DataSource {
             //返回Connection的代理对象
             System.out.println("拿走了一个连接，池中还剩 " + connPool.size() + " 个连接");
 //            为什么使用动态代理呢？将所有的封装到一个地方
-            return (Connection) Proxy.newProxyInstance(ConnPool.class.getClassLoader(), conn.getClass().getInterfaces(), new InvocationHandler() {
-                public Object invoke(Object proxy, Method method, Object[] args)
-                    throws Throwable {
-                    if(!"close".equals(method.getName())){
-                        return method.invoke(conn, args);
-                    }else{
-                        connPool.add(conn);
-                        System.out.println("关闭连接，实际还给了连接池");
-                        System.out.println("池中连接数为 " + connPool.size());
-                        return null;
-                    }
+            return (Connection) Proxy.newProxyInstance(ConnPool.class.getClassLoader(), conn.getClass().getInterfaces(), (proxy, method, args) -> {
+                if(!"close".equals(method.getName())){
+                    return method.invoke(conn, args);
+                }else{
+                    connPool.add(conn);
+                    System.out.println("关闭连接，实际还给了连接池");
+                    System.out.println("池中连接数为 " + connPool.size());
+                    return null;
                 }
             });
         }else{

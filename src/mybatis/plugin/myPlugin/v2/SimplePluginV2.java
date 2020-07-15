@@ -1,10 +1,6 @@
-package com.wufeng.WKbatis.v2.plugin.myPlugin.v2;
-
-import com.wufeng.WKbatis.v2.plugin.myPlugin.v1.Interceptor;
+package mybatis.plugin.myPlugin.v2;
 
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.lang.reflect.Proxy;
 
 public class SimplePluginV2 implements InterceptorV2 {
     @Override

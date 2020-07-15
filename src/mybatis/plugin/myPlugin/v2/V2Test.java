@@ -1,4 +1,4 @@
-package com.wufeng.WKbatis.v2.plugin.myPlugin.v2;
+package mybatis.plugin.myPlugin.v2;
 
 import com.wufeng.WKbatis.v2.plugin.myPlugin.v1.*;
 

@@ -1,4 +1,4 @@
-package com.wufeng.WKbatis.v2.plugin.myPlugin.v1;
+package mybatis.plugin.myPlugin.v1;
 
 public class ExplicitHandler implements Handler {
     @Override

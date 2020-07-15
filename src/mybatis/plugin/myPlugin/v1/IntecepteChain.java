@@ -1,4 +1,4 @@
-package com.wufeng.WKbatis.v2.plugin.myPlugin.v1;
+package mybatis.plugin.myPlugin.v1;
 
 import java.util.ArrayList;
 import java.util.List;

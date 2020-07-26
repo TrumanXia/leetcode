@@ -1,6 +1,7 @@
 package mybatis.plugin.myPlugin.v2;
 
-import com.wufeng.WKbatis.v2.plugin.myPlugin.v1.*;
+import mybatis.plugin.myPlugin.v1.ExplicitHandler;
+import mybatis.plugin.myPlugin.v1.Handler;
 
 /**
  * @author 97994

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inventory>
+    <book year="2000">
+        <title>Snow</title>
+        <author>neal</author>
+        <price>14.95</price>
+    </book>
+    <book year="2005" are="sss">
+        <title>Snow</title>
+        <author>neal</author>
+        <price>14.95</price>
+    </book>
+</inventory>
